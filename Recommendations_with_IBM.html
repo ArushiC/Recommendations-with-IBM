@@ -25540,7 +25540,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[347]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Do a spot check of your function</span>
@@ -25564,6 +25564,8 @@ Your top_20 looks like the solution list! Nice job.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The 10 most similar users to user 1 are: [3933, 23, 3782, 203, 4459, 131, 3870, 46, 4201, 49]
+The 5 most similar users to user 3933 are: [1, 23, 3782, 203, 4459]
+The 3 most similar users to user 46 are: [4201, 23, 3782]
 </pre>
 </div>
 </div>
@@ -25582,7 +25584,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[275]:</div>
+<div class="prompt input_prompt">In&nbsp;[348]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_article_names</span><span class="p">(</span><span class="n">article_ids</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">df_copy</span><span class="p">):</span>
@@ -25683,7 +25685,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[276]:</div>
+<div class="prompt input_prompt">In&nbsp;[349]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check Results</span>
@@ -25700,7 +25702,7 @@ Your top_20 looks like the solution list! Nice job.
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[276]:</div>
+    <div class="prompt output_prompt">Out[349]:</div>
 
 
 
@@ -25726,7 +25728,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[277]:</div>
+<div class="prompt input_prompt">In&nbsp;[350]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test your functions here - No need to change this code - just run this cell</span>
@@ -25778,7 +25780,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[278]:</div>
+<div class="prompt input_prompt">In&nbsp;[380]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_top_sorted_users</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">df_copy</span><span class="p">,</span> <span class="n">user_item</span><span class="o">=</span><span class="n">user_item</span><span class="p">):</span>
@@ -25808,7 +25810,7 @@ Your top_20 looks like the solution list! Nice job.
             <span class="k">continue</span>
         <span class="n">neighbor_id</span>  <span class="o">=</span> <span class="n">user</span>
         <span class="n">similarity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">user_item</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_id</span><span class="p">,</span> <span class="p">:],</span><span class="n">user_item</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user</span><span class="p">,</span> <span class="p">:])</span>
-        <span class="n">num_interactions</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">user</span><span class="p">][</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="n">num_interactions</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">user</span><span class="p">][</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
         <span class="n">neighbors_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">neighbor_id</span><span class="p">,</span> <span class="n">similarity</span><span class="p">,</span> <span class="n">num_interactions</span><span class="p">]</span>
         
     <span class="n">neighbors_df</span><span class="p">[</span><span class="s1">&#39;neighbor_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">neighbors_df</span><span class="p">[</span><span class="s1">&#39;neighbor_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
@@ -25880,7 +25882,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[279]:</div>
+<div class="prompt input_prompt">In&nbsp;[381]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Testing function</span>
@@ -25897,7 +25899,7 @@ Your top_20 looks like the solution list! Nice job.
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[279]:</div>
+    <div class="prompt output_prompt">Out[381]:</div>
 
 
 
@@ -56827,7 +56829,7 @@ Your top_20 looks like the solution list! Nice job.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[280]:</div>
+<div class="prompt input_prompt">In&nbsp;[353]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Quick spot check - don&#39;t change this code - just use it to test your functions</span>
@@ -56876,7 +56878,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[281]:</div>
+<div class="prompt input_prompt">In&nbsp;[354]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Tests with a dictionary of results</span>
@@ -56892,7 +56894,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[282]:</div>
+<div class="prompt input_prompt">In&nbsp;[355]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Dictionary Test Here</span>
@@ -56952,7 +56954,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[283]:</div>
+<div class="prompt input_prompt">In&nbsp;[356]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_user</span> <span class="o">=</span> <span class="s1">&#39;0.0&#39;</span>
@@ -56969,7 +56971,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[284]:</div>
+<div class="prompt input_prompt">In&nbsp;[357]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">new_user_recs</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;1314.0&#39;</span><span class="p">,</span><span class="s1">&#39;1429.0&#39;</span><span class="p">,</span><span class="s1">&#39;1293.0&#39;</span><span class="p">,</span><span class="s1">&#39;1427.0&#39;</span><span class="p">,</span><span class="s1">&#39;1162.0&#39;</span><span class="p">,</span><span class="s1">&#39;1364.0&#39;</span><span class="p">,</span><span class="s1">&#39;1304.0&#39;</span><span class="p">,</span><span class="s1">&#39;1170.0&#39;</span><span class="p">,</span><span class="s1">&#39;1431.0&#39;</span><span class="p">,</span><span class="s1">&#39;1330.0&#39;</span><span class="p">]),</span> <span class="s2">&quot;Oops!  It makes sense that in this case we would want to recommend the most popular articles, because we don&#39;t know anything about these users.&quot;</span>
@@ -57079,7 +57081,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[287]:</div>
+<div class="prompt input_prompt">In&nbsp;[358]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load the matrix here</span>
@@ -57093,7 +57095,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[288]:</div>
+<div class="prompt input_prompt">In&nbsp;[359]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># quick look at the matrix</span>
@@ -57110,7 +57112,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[288]:</div>
+    <div class="prompt output_prompt">Out[359]:</div>
 
 
 
@@ -62173,7 +62175,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[289]:</div>
+<div class="prompt input_prompt">In&nbsp;[360]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Perform SVD on the User-Item Matrix Here</span>
@@ -62188,7 +62190,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[290]:</div>
+<div class="prompt input_prompt">In&nbsp;[361]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">u</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">vt</span><span class="o">.</span><span class="n">shape</span>
@@ -62204,7 +62206,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[290]:</div>
+    <div class="prompt output_prompt">Out[361]:</div>
 
 
 
@@ -62236,7 +62238,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[291]:</div>
+<div class="prompt input_prompt">In&nbsp;[362]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_latent_feats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">700</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
@@ -62307,7 +62309,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[292]:</div>
+<div class="prompt input_prompt">In&nbsp;[363]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">40000</span><span class="p">)</span>
@@ -62345,7 +62347,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[293]:</div>
+<div class="prompt input_prompt">In&nbsp;[364]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Validating the size of train and test matrices</span>
@@ -62362,7 +62364,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[293]:</div>
+    <div class="prompt output_prompt">Out[364]:</div>
 
 
 
@@ -62379,7 +62381,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[294]:</div>
+<div class="prompt input_prompt">In&nbsp;[365]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Users we can make prediction for</span>
@@ -62396,7 +62398,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[294]:</div>
+    <div class="prompt output_prompt">Out[365]:</div>
 
 
 
@@ -62413,7 +62415,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[295]:</div>
+<div class="prompt input_prompt">In&nbsp;[366]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Users with cold start problem</span>
@@ -62430,7 +62432,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[295]:</div>
+    <div class="prompt output_prompt">Out[366]:</div>
 
 
 
@@ -62447,7 +62449,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[296]:</div>
+<div class="prompt input_prompt">In&nbsp;[367]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Articles we can make prediction for</span>
@@ -62464,7 +62466,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[296]:</div>
+    <div class="prompt output_prompt">Out[367]:</div>
 
 
 
@@ -62481,7 +62483,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[297]:</div>
+<div class="prompt input_prompt">In&nbsp;[368]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Articles with cold start problem</span>
@@ -62498,7 +62500,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[297]:</div>
+    <div class="prompt output_prompt">Out[368]:</div>
 
 
 
@@ -62515,7 +62517,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[298]:</div>
+<div class="prompt input_prompt">In&nbsp;[369]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Replace the values in the dictionary below</span>
@@ -62575,7 +62577,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[299]:</div>
+<div class="prompt input_prompt">In&nbsp;[370]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># fit SVD on the user_item_train matrix</span>
@@ -62590,7 +62592,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[300]:</div>
+<div class="prompt input_prompt">In&nbsp;[371]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">u_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">s_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">vt_train</span><span class="o">.</span><span class="n">shape</span>
@@ -62606,7 +62608,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[300]:</div>
+    <div class="prompt output_prompt">Out[371]:</div>
 
 
 
@@ -62623,7 +62625,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[301]:</div>
+<div class="prompt input_prompt">In&nbsp;[372]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use these cells to see how well you can use the training </span>
@@ -62637,7 +62639,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[302]:</div>
+<div class="prompt input_prompt">In&nbsp;[373]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get index of the user_id and article_id that exist in test dataset</span>
@@ -62652,7 +62654,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[303]:</div>
+<div class="prompt input_prompt">In&nbsp;[374]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create the u and v test matrices</span>
@@ -62667,7 +62669,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[304]:</div>
+<div class="prompt input_prompt">In&nbsp;[375]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Validate the size for u and v matrices</span>
@@ -62684,7 +62686,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[304]:</div>
+    <div class="prompt output_prompt">Out[375]:</div>
 
 
 
@@ -62701,7 +62703,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[305]:</div>
+<div class="prompt input_prompt">In&nbsp;[376]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a df with the actual values of test data</span>
@@ -62715,7 +62717,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[306]:</div>
+<div class="prompt input_prompt">In&nbsp;[377]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_latent_feats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">700</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
@@ -62779,7 +62781,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[307]:</div>
+<div class="prompt input_prompt">In&nbsp;[378]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># plot error for train data</span>
@@ -62833,7 +62835,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[308]:</div>
+<div class="prompt input_prompt">In&nbsp;[379]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
@@ -62850,7 +62852,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[308]:</div>
+    <div class="prompt output_prompt">Out[379]:</div>
 
 
 
